@@ -1,0 +1,100 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Quick Note Taker</title>
+        <style>
+            body {
+                font-family: system-ui;
+                padding: 20px;
+                background: #f4f4f4;
+                margin: 0;
+            }
+            .container {
+                max-width: 800px;
+                margin: 0 auto;
+                background: white;
+                padding: 20px;
+                border-radius: 8px;
+                box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            }
+            h1 {
+                color: #316357;
+                text-align: center;
+            }
+            textarea {
+                width: 100%;
+                height: 60vh;
+                padding: 10px;
+                font-size: 16px;
+                border: 1px solid #ddd;
+                border-radius: 4px;
+                resize: vertical;
+            }
+            button {
+                padding: 10px 20px;
+                font-size: 16px;
+                background: #316357;
+                color: white;
+                border: none;
+                cursor: pointer;
+                border-radius: 4px;
+                margin-top: 10px;
+            }
+            .buttons {
+                display: flex;
+                gap: 10px;
+                margin-top: 10px;
+            }
+            #clear {
+                background: #dc3545;
+            }
+            #clear:hover {
+                background: #c82333;
+            }
+            .status {
+                margin-top: 10px;
+                padding: 5px;
+                border-radius: 4px;
+                font-size: 14px;
+            }
+            .status.success {
+                color: #155724;
+                background: #d4edda;
+                border: 1px solid #c3e6cb;
+            }
+            .save-indicator {
+                margin-left: auto;
+                padding: 5px 10px;
+                border-radius: 4px;
+                font-size: 12px;
+                font-weight: bold;
+                color: #721c24;
+                background: #f8d7da;
+                border: 1px solid #f5c6cb;
+            }
+            .save-indicator.saved {
+                color: #155724;
+                background: #d4edda;
+                border: 1px solid #c3e6cb;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>Quick Note Taker </h1>
+            <textarea id="note" placeholder="Start typing your note..."></textarea>
+            <div class="buttons">
+                <button id="new-note-btn">New Note</button>
+                <button id="open-file">Open File</button>
+                <button id="saveas">Save As</button>
+                <button id="clear">Clear Note</button>
+                <div id="save-indicator" class="save-indicator">Not saved</div>
+            </div>
+            <div id="status" class="status"></div>
+        </div>
+        <script src="renderer.js"></script>
+    </body>
+</html>
